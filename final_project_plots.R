@@ -185,10 +185,10 @@ par(mar = c(3,3,3,3))
 
 # pie chart
 clinical$stage_event_pathologic_stage
-white_maf@clinical.data$stage_event_pathologic_stage
-black_maf@clinical.data$stage_event_pathologic_stage
-length(unique(white_maf@clinical.data$stage_event_pathologic_stage))
-length(unique(black_maf@clinical.data$stage_event_pathologic_stage))
+# white_maf@clinical.data$stage_event_pathologic_stage
+# black_maf@clinical.data$stage_event_pathologic_stage
+# length(unique(white_maf@clinical.data$stage_event_pathologic_stage))
+# length(unique(black_maf@clinical.data$stage_event_pathologic_stage))
 
 tab <- table(white_maf@clinical.data$stage_event_pathologic_stage)
 labelswhite = names(tab)
@@ -197,8 +197,12 @@ pie(countswhite, labels = labelswhite, main="Cancer Stage For White Patients")
 
 tab2 <- table(black_maf@clinical.data$stage_event_pathologic_stage)
 labelsblack = names(tab2)
+labels = paste0(count, "%")
 countsblack = c(tab2[1], tab2[2], tab2[3], tab2[4], tab2[5], tab2[6], tab2[7],tab2[8])
 pie(countsblack, labels = labelsblack, main="Cancer Stage For Black Patients")
 
 
+par(mar=c(0,0,0,0))     # Removes margins
+par(mar=c(5,4,4,2)+0.1) # Default
+par(mar=c(8,8,4,2))     # Larger bottom and left margins
 
